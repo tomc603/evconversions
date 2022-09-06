@@ -1,0 +1,11 @@
+@keyframes blink {
+    50% {
+        border-color: #ff0000;
+    }
+}
+
+.blinkingfield {
+    border-style: solid;
+    border-width: 1px;
+    animation: blink 0.25s step-end infinite alternate;
+}

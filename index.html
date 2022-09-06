@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>EV Value Conversions</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="convert.css">
+        <script src="convert.js"></script>
+    </head>
+<body>
+    <h1>Common EV Conversions</h1>
+    <hr>
+
+    <h2>Metric</h2>
+    <div style="margin: 1em; border: 1px solid black">
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            km/kWh to Wh/km:
+            <input class="valuefields" id="inpKmPerKwhToWhPerKm" inputmode="numeric">
+            <button id="btnKmPerKwhToWhPerKm" onclick="convertKmPerKwhToWhPerKm()">Convert</button>
+            <input class="valuefields" id="answerKmPerKwhToWhPerKm" readonly>
+        </div>
+
+        <div style="padding: 1em;">
+            Wh/km to km/kWh:
+            <input class="valuefields" id="inpWhPerKmToKmPerKwh" inputmode="numeric">
+            <button id="btnWhPerKmToKmPerKwh" onclick="convertWhPerKmToKmPerKwh()">Convert</button>
+            <input class="valuefields" id="answerWhPerKmToKmPerKwh" readonly>
+        </div>
+    </div>
+
+    <!-- Imperial calculations for distance/consumtion to consumption/distance and vice versa -->
+    <h2>Imperial</h2>
+    <div style="margin: 1em; border: 1px solid black">
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            Mi/kWh to Wh/Mi:
+            <input class="valuefields" id="inpMiPerKwhToWhPerMile" inputmode="numeric">
+            <button id="btnMiPerKwhToWhPerMile" onclick="convertMiPerKwhToWhPerMile()">Convert</button>
+            <input class="valuefields" id="answerMiPerKwhToWhPerMile" readonly>
+        </div>
+
+        <div style="padding: 1em;">
+            Wh/Mi to Mi/kWh:
+            <input class="valuefields" id="inpWhPerMileToMiPerKwh" inputmode="numeric">
+            <button id="btnWhPerMileToMiPerKwh" onclick="convertWhPerMileToMiPerKwh()">Convert</button>
+            <input class="valuefields" id="answerWhPerMileToMiPerKwh" readonly>
+        </div>
+    </div>
+
+    <!-- Conversions from metric to imperial and vice versa -->
+    <h2>Inter-system</h2>
+    <div style="margin: 1em; border: 1px solid black">
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            Wh/km to Wh/mi:
+            <input class="valuefields" id="inpWhPerKmToWhPerMi" inputmode="numeric">
+            <button id="btnWhPerKmToWhPerMi" onclick="convertWhPerKmToWhPerMi()">Convert</button>
+            <input class="valuefields" id="answerWhPerKmToWhPerMi" readonly>
+        </div>
+
+        <div style="padding: 1em; border-bottom: 1px solid black;">
+            Wh/mi to Wh/km:
+            <input class="valuefields" id="inpWhPerMiToWhPerKm" inputmode="numeric">
+            <button id="btnWhPerMiToWhPerKm" onclick="convertWhPerMiToWhPerKm()">Convert</button>
+            <input class="valuefields" id="answerWhPerMiToWhPerKm" readonly>
+        </div>
+
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            km/kWh to mi/kWh:
+            <input class="valuefields" id="inpKmPerKwnToMiPerKwh" inputmode="numeric">
+            <button id="btnKmPerKwnToMiPerKwh" onclick="convertKmPerKwnToMiPerKwh()">Convert</button>
+            <input class="valuefields" id="answerKmPerKwnToMiPerKwh" readonly>
+        </div>
+
+        <div style="padding: 1em;">
+            mi/kWh to km/kWh:
+            <input class="valuefields" id="inpMiPerKwhToKmPerKwh" inputmode="numeric">
+            <button id="btnMiPerKwhToKmPerKwh" onclick="convertMiPerKwhToKmPerKwh()">Convert</button>
+            <input class="valuefields" id="answerMiPerKwhToKmPerKwh" readonly>
+        </div>
+    </div>
+
+    <p><button id="btnWhPerMileToMiPerKwh" onclick="clearValueFields()">Clear All</button></p>
+
+    <!-- Clear the input fields in case the user has reloaded this page -->
+    <script>
+        clearValueFields();
+    </script>
+</body>
+</html>

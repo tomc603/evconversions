@@ -21,10 +21,9 @@
 //   KTM - Kilometers to Miles
 //   MTK - Miles to Kilometers
 
-const mtk = 0.6213711922;
-const ktm = 1.609344;
+const km_to_mile = 1.609344;
 const kWh = 1000.0;
-const flashes = 3;
+const flashTime = 3000;
 
 // TODO: Pass field names to common functions for distance/kWh to Wh/distance and Wh/distance to distance/kWh
 // TODO: Pass field names to common functions for km to mi and mi to km
@@ -35,15 +34,23 @@ function flashField(field) {
     let delayVal = 0;
 
     field.setAttribute('class', 'blinkingfield');
-    setTimeout(() => { field.removeAttribute('class'); }, 3000);
+    setTimeout(() => { field.removeAttribute('class'); }, flashTime);
+}
+
+function helperCtoF(value) {
+    return Number(((value * 1.8) + 32).toFixed(2));
+}
+
+function helperFtoC(value) {
+    return Number(((value - 32) / 1.8).toFixed(2));
 }
 
 function helperKTM(value) {
-    return Number((value * ktm).toFixed(2));
+    return Number((value * km_to_mile).toFixed(2));
 }
 
 function helperMTK(value) {
-    return Number((value * mtk).toFixed(2));
+    return Number((value / km_to_mile).toFixed(2));
 }
 
 function helperDPE(value) {
@@ -52,6 +59,32 @@ function helperDPE(value) {
 
 function helperEPD(value) {
     return Number((kWh / (Number(value))).toFixed(2));
+}
+
+function convertCtoF() {
+    srcField = document.getElementById('inpCToF');
+    dstField = document.getElementById('answerCToF');
+
+    dstField.value = '';
+    if (srcField.value) {
+        dstField.value = helperCtoF(srcField.value);
+    } else {
+        console.log("No value in " + srcField.id);
+        flashField(srcField);
+    }
+}
+
+function convertFtoC() {
+    srcField = document.getElementById('inpFToC');
+    dstField = document.getElementById('answerFToC');
+
+    dstField.value = '';
+    if (srcField.value) {
+        dstField.value = helperFtoC(srcField.value);
+    } else {
+        console.log("No value in " + srcField.id);
+        flashField(srcField);
+    }
 }
 
 function convertKTM(srcField, dstField) {
@@ -92,6 +125,20 @@ function convertEPDtoDPE(srcField, dstField) {
         console.log("No value in " + srcField.id);
         flashField(srcField);
     }
+}
+
+function convertKmToMi() {
+    const srcField = document.getElementById('inpKmToMi');
+    const dstField = document.getElementById('answerKmToMi');
+
+    convertKTM(srcField, dstField);
+}
+
+function convertMiToKm() {
+    const srcField = document.getElementById('inpMiToKm');
+    const dstField = document.getElementById('answerMiToKm');
+
+    convertMTK(srcField, dstField);
 }
 
 function convertKmPerKwhToWhPerKm() {

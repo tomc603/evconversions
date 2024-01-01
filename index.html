@@ -28,16 +28,16 @@ limitations under the License.
     <h2>Metric</h2>
     <div style="margin: 1em; border: 1px solid black">
         <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
-            km/kWh to Wh/km:
+            <label for="inpKmPerKwhToWhPerKm">km/kWh to Wh/km:</label>
             <input class="valuefields" id="inpKmPerKwhToWhPerKm" inputmode="numeric">
-            <button id="btnKmPerKwhToWhPerKm" onclick="convertKmPerKwhToWhPerKm()">Convert</button>
+            <button class="btnConvert" id="btnKmPerKwhToWhPerKm" onclick="convertKmPerKwhToWhPerKm()">&#8680;</button>
             <input class="valuefields" id="answerKmPerKwhToWhPerKm" readonly>
         </div>
 
         <div style="padding: 1em;">
-            Wh/km to km/kWh:
+            <label for="inpWhPerKmToKmPerKwh">Wh/km to km/kWh:</label>
             <input class="valuefields" id="inpWhPerKmToKmPerKwh" inputmode="numeric">
-            <button id="btnWhPerKmToKmPerKwh" onclick="convertWhPerKmToKmPerKwh()">Convert</button>
+            <button class="btnConvert" id="btnWhPerKmToKmPerKwh" onclick="convertWhPerKmToKmPerKwh()">&#8680;</button>
             <input class="valuefields" id="answerWhPerKmToKmPerKwh" readonly>
         </div>
     </div>
@@ -46,16 +46,16 @@ limitations under the License.
     <h2>Imperial</h2>
     <div style="margin: 1em; border: 1px solid black">
         <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
-            Mi/kWh to Wh/Mi:
+            <label for="inpMiPerKwhToWhPerMile">Mi/kWh to Wh/Mi:</label>
             <input class="valuefields" id="inpMiPerKwhToWhPerMile" inputmode="numeric">
-            <button id="btnMiPerKwhToWhPerMile" onclick="convertMiPerKwhToWhPerMile()">Convert</button>
+            <button class="btnConvert" id="btnMiPerKwhToWhPerMile" onclick="convertMiPerKwhToWhPerMile()">&#8680;</button>
             <input class="valuefields" id="answerMiPerKwhToWhPerMile" readonly>
         </div>
 
         <div style="padding: 1em;">
-            Wh/Mi to Mi/kWh:
+            <label for="inpMiPerKwhToWhPerMile">Wh/Mi to Mi/kWh:</label>
             <input class="valuefields" id="inpWhPerMileToMiPerKwh" inputmode="numeric">
-            <button id="btnWhPerMileToMiPerKwh" onclick="convertWhPerMileToMiPerKwh()">Convert</button>
+            <button class="btnConvert" id="btnWhPerMileToMiPerKwh" onclick="convertWhPerMileToMiPerKwh()">&#8680;</button>
             <input class="valuefields" id="answerWhPerMileToMiPerKwh" readonly>
         </div>
     </div>
@@ -64,35 +64,67 @@ limitations under the License.
     <h2>Inter-system</h2>
     <div style="margin: 1em; border: 1px solid black">
         <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
-            Wh/km to Wh/mi:
+            <label for="inpKmToMi">km to mi:</label>
+            <input class="valuefields" id="inpKmToMi" inputmode="numeric">
+            <button class="btnConvert" id="btnKmToMi" onclick="convertKmToMi()">
+                &#8680;</button>
+            <!--<label for="answerKmToMi">mi:</label>-->
+            <input class="valuefields" id="answerKmToMi" readonly>
+        </div>
+
+        <div style="padding: 1em; border-bottom: 1px solid black;">
+            <label for="inpMiToKm">mi to km:</label>
+            <input class="valuefields" id="inpMiToKm" inputmode="numeric">
+            <button class="btnConvert" id="btnMoToKm" onclick="convertMiToKm()">&#8680;</button>
+            <input class="valuefields" id="answerMiToKm" readonly>
+        </div>
+
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            <label for="inpCToF">ºC to ºF:</label>
+            <input class="valuefields" id="inpCToF" inputmode="numeric">
+            <button class="btnConvert" id="btnCToF" onclick="convertCtoF()">&#8680;</button>
+            <input class="valuefields" id="answerCToF" readonly>
+        </div>
+
+        <div style="padding: 1em;">
+            <label for="inpFToC">ºF to ºC:</label>
+            <input class="valuefields" id="inpFToC" inputmode="numeric">
+            <button class="btnConvert" id="btnFToC" onclick="convertFtoC()">&#8680;</button>
+            <input class="valuefields" id="answerFToC" readonly>
+        </div>
+    </div>
+
+    <div style="margin: 1em; border: 1px solid black">
+        <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
+            <label for="inpWhPerKmToWhPerMi">Wh/km to Wh/mi:</label>
             <input class="valuefields" id="inpWhPerKmToWhPerMi" inputmode="numeric">
-            <button id="btnWhPerKmToWhPerMi" onclick="convertWhPerKmToWhPerMi()">Convert</button>
+            <button class="btnConvert" id="btnWhPerKmToWhPerMi" onclick="convertWhPerKmToWhPerMi()">&#8680;</button>
             <input class="valuefields" id="answerWhPerKmToWhPerMi" readonly>
         </div>
 
         <div style="padding: 1em; border-bottom: 1px solid black;">
-            Wh/mi to Wh/km:
+            <label for="inpWhPerMiToWhPerKm">Wh/mi to Wh/km:</label>
             <input class="valuefields" id="inpWhPerMiToWhPerKm" inputmode="numeric">
-            <button id="btnWhPerMiToWhPerKm" onclick="convertWhPerMiToWhPerKm()">Convert</button>
+            <button class="btnConvert" id="btnWhPerMiToWhPerKm" onclick="convertWhPerMiToWhPerKm()">&#8680;</button>
             <input class="valuefields" id="answerWhPerMiToWhPerKm" readonly>
         </div>
 
         <div style="padding: 1em; background-color: lightgray; border-bottom: 1px solid black;">
-            km/kWh to mi/kWh:
+            <label for="inpKmPerKwnToMiPerKwh">km/kWh to mi/kWh:</label>
             <input class="valuefields" id="inpKmPerKwnToMiPerKwh" inputmode="numeric">
-            <button id="btnKmPerKwnToMiPerKwh" onclick="convertKmPerKwnToMiPerKwh()">Convert</button>
+            <button class="btnConvert" id="btnKmPerKwnToMiPerKwh" onclick="convertKmPerKwnToMiPerKwh()">&#8680;</button>
             <input class="valuefields" id="answerKmPerKwnToMiPerKwh" readonly>
         </div>
 
         <div style="padding: 1em;">
-            mi/kWh to km/kWh:
+            <label for="inpMiPerKwhToKmPerKwh">mi/kWh to km/kWh:</label>
             <input class="valuefields" id="inpMiPerKwhToKmPerKwh" inputmode="numeric">
-            <button id="btnMiPerKwhToKmPerKwh" onclick="convertMiPerKwhToKmPerKwh()">Convert</button>
+            <button class="btnConvert" id="btnMiPerKwhToKmPerKwh" onclick="convertMiPerKwhToKmPerKwh()">&#8680;</button>
             <input class="valuefields" id="answerMiPerKwhToKmPerKwh" readonly>
         </div>
     </div>
 
-    <p><button id="btnWhPerMileToMiPerKwh" onclick="clearValueFields()">Clear All</button></p>
+    <p><button id="btnClearAll" onclick="clearValueFields()">Clear All</button></p>
 
     <!-- Clear the input fields in case the user has reloaded this page -->
     <script>

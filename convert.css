@@ -19,6 +19,12 @@ limitations under the License.
     }
 }
 
+.btnConvert {
+    font-size: large;
+    font-weight: bold;
+    width: 2.5em;
+}
+
 .blinkingfield {
     border-style: solid;
     border-width: 1px;
